@@ -12,22 +12,31 @@
 	<!-- 웹 정보를 제외한 모든 정보를 가지고 있음 -->
 	
 	<!-- DataSource : DB연결정보를 저장하는 객체 -->
+	<!-- DriverManagerDataSource dataSource = new DriverManagerDataSource -->
 	<bean id="dataSource"
 		  class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
 		<property name="url" value="jdbc:mysql://localhost:3306/springdb"/>
 		<property name="username" value="root"/>
 		<property name="password" value="1234"/>
-	
 	</bean>
-	
-	
-	
-	
 	<!-- DataSource : DB연결정보를 저장하는 객체 -->
 	
-	
-	
+	<!-- SqlSessionFactory : connection 생성(+연결정보), SQL 쿼리 실행, Mybatis -->
+	<bean id="sqlSessionFactory" 
+		  class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- <property name="dataSource"/>  ==  setDataSource() -->
+		<property name="dataSource" ref="dataSource"/>
+		
+		<!-- classpath : /는 src/main/resources 폴더를 의미함 -->
+		<property name="configLocation"
+				  value="classpath:/mybatis-config.xml"/>
+		<property name="mapperLocations"
+			 	  value="classpath:/mappers/**/*Mapper.xml"/>
+	</bean>
+	<!-- SqlSessionFactory : connection 생성(+연결정보), SQL 쿼리 실행, Mybatis -->
+	<!--  <bean id="memberDaoImpl" class="com.itwillbs.persistence.MemberDAOImpl"/>  -->
+	<context:component-scan base-package="com.itwillbs.persistence"/>
 	
 	
 	
