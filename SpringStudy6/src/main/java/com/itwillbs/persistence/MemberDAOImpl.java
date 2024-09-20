@@ -18,7 +18,7 @@ import com.itwillbs.domain.MemberVO;
  */
 
 // @Repository : 스프링이 해당클래스를 DAO객체(Bean)로 인식하게 함
-//				 -> root-context.xml 파일에서 해당 객체를 사용하도록 설정 
+//				 -> root-context.xml 파일에서 해당 객체를 사용하도록 설정 --> component-scan
 
 @Repository
 public class MemberDAOImpl implements MemberDAO{
