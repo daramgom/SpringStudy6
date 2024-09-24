@@ -28,8 +28,13 @@
 	<h3> doB () 실행시 전달된 VO객체 정보 출력 </h3>
 	<h3> MemberVO : <%-- requestScope. 생략 --%>${memberVO } </h3>
 	<h3> vo1 : <%-- requestScope. 생략 --%>${vo1 } </h3>
+	<h3> adminVO : ${adminVO } </h3>
 	<hr>
 	
+	userid : ${userid } <br>
+	userid : ${param.userid } <br>
+	userpw : ${userpw } <br>
+	userpw : ${param.userpw } <br>
 	
 </body>
 </html>
