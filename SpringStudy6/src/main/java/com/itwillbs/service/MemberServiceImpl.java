@@ -1,5 +1,7 @@
 package com.itwillbs.service;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +41,7 @@ public class MemberServiceImpl implements MemberService {
 		logger.debug(" ( •̀ ω •́ )✧ 서비스 -> 컨트롤러 ");
 		
 	}
+	
 
 	@Override
 	public MemberVO memberLoginCheck(MemberVO vo) {
@@ -50,6 +53,38 @@ public class MemberServiceImpl implements MemberService {
 		
 		return mdao.loginMember(vo);
 	}
+	
+
+	@Override
+	public MemberVO memberInfo(String userid) {
+		logger.debug(" ( •̀ ω •́ )✧ memberInfo(String userid) 실행 ");
+		// DAO에 있는 회원정보 조회 메서드 호출 결과 리턴
+		return mdao.getMember(userid);
+	}
+	
+
+	@Override
+	public int memberUpdate(MemberVO uvo) {
+		logger.debug(" ( •̀ ω •́ )✧ memberUpdate(MemberVO uvo) 실행 ");
+		
+		return mdao.updateMember(uvo);
+	}
+
+
+	@Override
+	public int memberDelete(MemberVO dvo) {
+		logger.debug(" ( •̀ ω •́ )✧ memberDelete(MemberVO dvo) 실행 ");
+		return mdao.deleteMember(dvo);
+	}
+
+
+	@Override
+	public List<MemberVO> memberList() {
+		logger.debug(" ( •̀ ω •́ )✧ memberList() 실행 ");
+		return mdao.getMemberList();
+	}
+	
+	
 	
 	
 	

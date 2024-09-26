@@ -16,6 +16,10 @@
 			비밀번호 : <input type="password" name="userpw"><br>
 		
 			<input type="submit" value="로그인">
+			<input type="button" onclick="location.href='/member/join';" value="회원가입">
+			<!-- <a href='/member/join'> 회원가입 </a> -->
+			<!-- <a href="javascript:location.href='/member/join';"> 회원가입 </a> -->
+			
 		</form>
 	</fieldset>
 </body>
