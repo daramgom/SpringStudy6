@@ -37,6 +37,7 @@ public class MemberController {
 	// private MemberDAO mdao;
 	
 	// @Inject
+	// 생성자 주입
 	private MemberService mService;
 	
 	@Autowired
