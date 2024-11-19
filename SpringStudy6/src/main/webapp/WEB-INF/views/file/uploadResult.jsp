@@ -19,7 +19,8 @@
 	<%-- 파일 : <a href="C:\\upload\\${file }">${file }</a> <br> --%>
 	<c:forEach items="${map.fileList }" var="file">
 		파일 : <a href="/file/download?fileName=${file }">${file }</a> <br>
-		<img src="/file/download?fileName=${file }" style="width:10vw;height:20vh;">
+		<img src="/file/download?fileName=${file }"> <br>
+		썸네일 : <img src="/file/thDownload?fileName=${file }">
 	</c:forEach>
 	
 	<a href="/file/form"> 다시 업로드 화면으로 ... </a>
